@@ -369,7 +369,7 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
       name: "Pablo Brusco",
       title: "Investigador en Machine Learning y Habla",
       location: "Buenos Aires, Argentina",
-      summary: "Investigador en Machine Learning y Habla con más de 10 años de experiencia. Científico de Datos Senior en NoRedInk (Full Stack ML & Analytics). Anteriormente Investigador Científico Staff en ASAPP liderando sistemas de diálogo conscientes de voz y ASR. Profesor Regular Parcial y Director de la Carrera de Ciencias de la Computación en la Universidad de Buenos Aires."
+      summary: "Investigador en Machine Learning y Habla con más de 10 años de experiencia. Científico de Datos Senior en NoRedInk (Full Stack ML & Analytics). Anteriormente Investigador Científico Staff en ASAPP liderando sistemas de diálogo. Profesor Regular Parcial y Director de la Carrera de Ciencias de la Computación en la Universidad de Buenos Aires."
     },
     experience: [
       {

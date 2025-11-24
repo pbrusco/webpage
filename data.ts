@@ -11,14 +11,6 @@ const SHARED_LINKS = {
 
 const PUBLICATIONS_DATA = [
   {
-    id: "j1",
-    type: "journal",
-    title: "Speech-induced suppression during natural dialogues",
-    authors: "Joaquin E Gonzalez, Nicolás Nieto, Pablo Brusco, Agustín Gravano, and Juan E Kamienkowski",
-    venue: "Communications Biology",
-    year: "2024"
-  },
-  {
     id: "j2",
     type: "journal",
     title: "Automatic offline annotation of turn-taking transitions in task-oriented dialogue",
@@ -39,7 +31,7 @@ const PUBLICATIONS_DATA = [
     type: "conference",
     title: "SLUE: new benchmark tasks for spoken language understanding evaluation on natural speech",
     authors: "Suwon Shon, Ankita Pasad, Felix Wu, Pablo Brusco, Yoav Artzi, Karen Livescu, and Kyu J. Han",
-    venue: "CoRR (Preprint)",
+    venue: "ICASSP 2022",
     year: "2021"
   },
   {
@@ -111,8 +103,8 @@ const PUBLICATIONS_DATA = [
     type: "dataset",
     title: "UBA Games Corpus",
     authors: "Agustín Gravano, Juan E Kamienkowski, and Pablo Brusco",
-    venue: "Published Dataset",
-    year: "2016"
+    venue: "CONICET",
+    year: "2023"
   }
 ] as any;
 
@@ -139,44 +131,22 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
       name: "Pablo Brusco",
       title: "Machine Learning & Speech Researcher",
       location: "Buenos Aires, Argentina",
-      summary: "Machine Learning & Speech Researcher with 10+ years of experience. Senior Data Scientist at NoRedInk (Full Stack ML & Analytics). Previously Staff Research Scientist at ASAPP leading voice-aware dialog systems and ASR. Part-time Tenure Professor and Director of the Computer Science Degree Program at the University of Buenos Aires."
+      summary: "Machine Learning & Speech Researcher with 10+ years of experience. Data Scientist at NoRedInk. Previously Research Scientist at ASAPP leading voice-aware dialog systems and ASR. Part-time Tenure Professor and Director of the Computer Science Degree Program at the University of Buenos Aires."
     },
     experience: [
       {
         id: "e0",
-        role: "Senior Data Scientist (Full Stack ML & Analytics)",
+        role: "Data Scientist",
         company: "NoRedInk",
         period: "Dec 2025 – Current",
-        achievements: [
-          "Starting new role focused on Full Stack Machine Learning and Analytics."
-        ]
+        description: "Focus on Full Stack Machine Learning and Analytics."
       },
       {
         id: "e1",
-        role: "Staff Research Scientist",
+        role: "Research Scientist",
         company: "ASAPP Inc",
-        period: "May 2022 – Nov 2025",
-        achievements: [
-          "Designed and implemented an evaluation framework for real-time Voice APIs, including traditional cascade systems and multimodal speech-LLMs. Assessed noise robustness, latency, and naturalness.",
-          "Leading the development of a voice-aware dialog system, focusing on the turn-orchestration module for natural human-AI conversations.",
-          "Improved conversation simulation using LLMs to create natural dialogs, API calls, and user goals. Reduced developer ramp-up time from weeks to days.",
-          "Refactored training datasets and framework to enhance model development efficiency and enable seamless deployment across GPU clusters.",
-          "Automated a pipeline for converting raw audio data into structured data for training, reducing onboarding time from >3 months to 1.5 weeks.",
-          "Led development of the company's first Spanish ASR model, achieving production-grade accuracy for existing customers."
-        ]
-      },
-      {
-        id: "e2",
-        role: "Lead Research Scientist",
-        company: "ASAPP Inc",
-        period: "Apr 2020 – May 2022",
-        achievements: [
-          "Conducted R&D of sentiment classifiers based on audio and text inputs (see Patent).",
-          "Transitioned capitalization/punctuation from FST-based to neural-based models.",
-          "Enhanced rules-based inverse text normalization.",
-          "Built standardized evaluation pipelines to ensure fair comparison of models against competitor APIs.",
-          "Improved the performance of generic models by integrating diverse data sources."
-        ]
+        period: "Apr 2020 – Nov 2025",
+        description: "Development of voice-aware dialog systems and production-grade Spanish ASR models. Design of evaluation frameworks for real-time Voice APIs and automation of data pipelines. R&D in the field of speech processing."
       },
       {
         id: "e3",
@@ -184,10 +154,7 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         company: "SRI International, STAR Lab",
         location: "Palo Alto, CA",
         period: "Dec 2018 – Mar 2019",
-        achievements: [
-          "Contributed to building statistical models for end-of-turn detection in spoken dialogue systems using RNNs.",
-          "Developed a framework for introducing first-order logic predicates into neural networks."
-        ]
+        description: "Construction of statistical models for end-of-turn detection in spoken dialogue systems using RNNs. Development of a framework for introducing first-order logic predicates into neural networks."
       },
       {
         id: "e5",
@@ -195,21 +162,14 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         company: "SRI International, STAR Lab",
         location: "Palo Alto, CA",
         period: "Sep 2016 – Dec 2016",
-        achievements: [
-          "Contributed to building a cough detection system for a Health Virtual Assistant by collecting corpora and developing ML models.",
-          "Participated in research on rare event detection using topic modeling techniques (LDA) for acoustic signals."
-        ]
+        description: "Development of ML models for a cough detection system in a Health Virtual Assistant. Research on rare event detection using acoustic topic modeling."
       },
       {
         id: "e6",
         role: "Software Developer",
         company: "Manas Technology Solutions",
         period: "Jun 2010 – Nov 2013",
-        achievements: [
-          "End-to-end developer of rich web applications for social and humanitarian goals.",
-          "Project Leader for various software projects in Phnom Penh, Cambodia (2013).",
-          "Distinguished projects include ResourceMap, a system to track work and resources geographically."
-        ]
+        description: "End-to-end development of rich web applications for social and humanitarian goals."
       }
     ],
     education: [
@@ -238,11 +198,39 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         id: "uba",
         institution: "University of Buenos Aires",
         department: "Department of Computer Science, School of Exact and Natural Sciences",
+        links: [{ label: "Student surveys (until 2022)", url: "https://encuestas-finales.exactas.uba.ar/doc/d8127.html" }],
         roles: [
-          { title: "Professor", details: "Machine Learning & Deep Learning (8 semesters), Algorithms and Data Structures II (2 semesters)." },
-          { title: "Head of TAs", details: "Machine Learning, Algorithms and Data Structures I, Algebra I, Programming Languages Paradigms (10 semesters total)." },
-          { title: "First-Class Teaching Assistant", details: "Algebra I, Programming Languages Paradigms (6 semesters)." },
-          { title: "Teaching Assistant", details: "Programming Languages Paradigms, Numerical Methods, Algorithms and Data Structures I (7 semesters)." }
+          {
+            title: "Professor (8 semesters)",
+            courses: [
+              { name: "Machine Learning & Deep Learning", periods: "2025-2C, 2025-1C, 2024-2, 2024-1, 2023-2, 2023-1" },
+              { name: "Algorithms and Data Structures II", periods: "2022-2, 2022-1" }
+            ]
+          },
+          {
+            title: "Head of TAs (10 semesters)",
+            courses: [
+              { name: "Machine Learning", periods: "2018-2" },
+              { name: "Algorithms and Data Structures I", periods: "2021-1, 2020-2, 2019-2, 2019-1, 2018-1, 2017-2" },
+              { name: "Algebra I", periods: "2017-1" },
+              { name: "Programming Languages Paradigms", periods: "2016-1, 2014-2" }
+            ]
+          },
+          {
+            title: "First-Class Teaching Assistant (6 semesters)",
+            courses: [
+              { name: "Algebra I", periods: "2015-2, 2015-summer, 2014-2, 2013-2" },
+              { name: "Programming Languages Paradigms", periods: "2015-1, 2014-1" }
+            ]
+          },
+          {
+            title: "Teaching Assistant (7 semesters)",
+            courses: [
+              { name: "Programming Languages Paradigms", periods: "2013-2, 2013-1, 2012-2, 2012-1" },
+              { name: "Numerical Methods", periods: "2011-2" },
+              { name: "Algorithms and Data Structures I", periods: "2011-2, 2011-1" }
+            ]
+          }
         ]
       },
       {
@@ -250,64 +238,63 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         institution: "Torcuato Di Tella University",
         department: "Master in Management + Analytics, Escuela de Negocios",
         roles: [
-          { title: "Professor", period: "2022", details: "Introduction to Data Processing in R (Intensive course)." },
-          { title: "Professor", period: "2022", details: "Introduction to Programming in R (Intensive course)." },
-          { title: "Professor", period: "2021", details: "Introduction to Data Processing in R (Intensive course)." }
+          {
+            title: "Professor",
+            courses: [
+              { name: "Introduction to Data Processing in R", periods: "2021-1 (Intensive, 8 lessons)" },
+              { name: "Introduction to Programming in R", periods: "2022-1 (Intensive, 4 lessons)" },
+              { name: "Introduction to Data Processing in R", periods: "2022-1 (Intensive, 4 lessons)" }
+            ]
+          }
         ]
-      }
+      },
     ],
     management: [
       {
         id: "m1",
         role: "Director of the Computer Science Degree Program",
         institution: "University of Buenos Aires",
-        period: "2024 - Present",
-        description: "Lead curriculum modernization and represent faculty in governance committees."
+        period: "2024 - Present"
       },
       {
         id: "m2",
         role: "Professor Representative on the Curriculum Committee",
         institution: "University of Buenos Aires",
-        period: "2021 - Present",
-        description: "Responsible for implementing the curriculum change for the Bachelor's Degree in Computer Science."
+        period: "2021 - Present"
       },
       {
         id: "m3",
         role: "Graduate Representative on the Curriculum Committee",
         institution: "University of Buenos Aires",
-        period: "2018 - 2021",
-        description: "Responsible for the curriculum change for the Bachelor's Degree."
+        period: "2018 - 2021"
       },
       {
         id: "m4",
         role: "Graduate Representative on the Department Council",
         institution: "University of Buenos Aires",
-        period: "2018 - 2019",
-        description: "Department of Computer Science, Faculty of Exact and Natural Sciences."
+        period: "2018 - 2019"
       },
       {
         id: "m5",
         role: "Evaluation Committee Representative",
         institution: "University of Buenos Aires",
-        period: "2017",
-        description: "Responsible for the evaluation of the current curriculum of the Bachelor's Degree in Computer Science."
+        period: "2017"
       },
       {
         id: "m6",
         role: "Organizer of outreach talks",
         institution: "University of Buenos Aires",
-        period: "2015 - 2018",
-        description: "Talks for high-school students to encourage them to pursue a CS-related degree."
+        period: "2015 - 2018"
       },
       {
         id: "m7",
         role: "Organizer",
         institution: "University of Buenos Aires",
-        period: "2015",
-        description: "Computer Science Week 2015."
+        period: "2015"
       }
     ],
     supervision: [
+      { id: "s0", student: "Sofía Roitman", thesis: "Optical Music Recognition with Visual LLMs: Zero-Shot Analysis on Monophonic Scores", year: "Dec 2025", role: "Advisor", coAdvisor: "Pablo Riera" },
       { id: "s1", student: "Tomás Ravel", thesis: "Turn-taking classification in human-human conversations using LLMs", year: "Jul 2025", role: "Advisor" },
       { id: "s2", student: "Sofía Goldberg", thesis: "Application of BERT embeddings for automatic Alzheimer's detection", year: "May 2025", role: "Advisor", coAdvisor: "Lara Gauder" },
       { id: "s3", student: "Jonathan Scherman", thesis: "Lexical and syntactic inclusion in models of offline tagging of shift transitions", year: "Aug 2024", role: "Advisor" },
@@ -323,13 +310,14 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         about: "About",
         experience: "Experience",
         research: "Research",
-        teaching: "Teaching"
+        teaching: "Teaching",
+        management: "Management"
       },
       home: {
         location: "Buenos Aires, Argentina",
         highlights: "Current Highlights",
-        role_noredink_title: "Senior Data Scientist",
-        role_noredink_desc: "Full Stack ML & Analytics.",
+        role_noredink_title: "Data Scientist",
+        role_noredink_desc: "",
         role_uba_title: "Director & Professor",
         role_uba_desc: "Director of the Computer Science Degree Program and Tenure Professor for Machine Learning & Deep Learning.",
         links: {
@@ -349,14 +337,16 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         subtitle: "Selected publications, patents, and datasets.",
         journals: "Journal Publications",
         conferences: "Peer-reviewed Conference Publications",
-        other: "Patents & Datasets"
+        other: "Patents & Datasets",
+        participation_title: "Conference Participation"
       },
       teaching: {
-        management_title: "Management Activities",
         teaching_title: "Teaching Experience",
         supervision_title: "Student Supervision (Master's / Degree Thesis)",
-        conferences_title: "Conference Participation",
         coadvisor_label: "Co-advisor"
+      },
+      management: {
+        title: "Management Activities"
       },
       footer: {
         rights: "All rights reserved."
@@ -369,44 +359,22 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
       name: "Pablo Brusco",
       title: "Investigador en Machine Learning y Habla",
       location: "Buenos Aires, Argentina",
-      summary: "Investigador en Machine Learning y Habla con más de 10 años de experiencia. Científico de Datos Senior en NoRedInk (Full Stack ML & Analytics). Anteriormente Investigador Científico Staff en ASAPP liderando sistemas de diálogo. Profesor Regular Parcial y Director de la Carrera de Ciencias de la Computación en la Universidad de Buenos Aires."
+      summary: "Investigador en Machine Learning y Habla con más de 10 años de experiencia. Científico de Datos en NoRedInk. Anteriormente Investigador Científico Staff en ASAPP liderando sistemas de diálogo. Profesor Regular Parcial y Director de la Carrera de Ciencias de la Computación en la Universidad de Buenos Aires."
     },
     experience: [
       {
         id: "e0",
-        role: "Científico de Datos Senior (Full Stack ML & Analytics)",
+        role: "Científico de Datos",
         company: "NoRedInk",
         period: "Dic 2025 – Actualidad",
-        achievements: [
-          "Comenzando nuevo rol enfocado en Machine Learning Full Stack y Analytics."
-        ]
+        description: "Rol enfocado en Machine Learning Full Stack y Analytics."
       },
       {
         id: "e1",
-        role: "Investigador Científico Staff",
+        role: "Investigador Científico",
         company: "ASAPP Inc",
-        period: "May 2022 – Nov 2025",
-        achievements: [
-          "Diseño e implementación de un marco de evaluación para APIs de voz en tiempo real, incluyendo sistemas en cascada tradicionales y speech-LLMs multimodales. Evaluación de robustez al ruido, latencia y naturalidad.",
-          "Liderazgo del desarrollo de un sistema de diálogo consciente de la voz, enfocado en el módulo de orquestación de turnos para conversaciones humano-IA naturales.",
-          "Mejora de la simulación de conversaciones utilizando LLMs para crear diálogos naturales, llamadas a API y objetivos de usuario. Reducción del tiempo de onboarding de desarrolladores de semanas a días.",
-          "Refactorización de datasets de entrenamiento y framework para mejorar la eficiencia del desarrollo de modelos y permitir el despliegue fluido en clusters de GPU.",
-          "Automatización de un pipeline para convertir datos de audio crudos en datos estructurados para entrenamiento, reduciendo el tiempo de onboarding de >3 meses a 1.5 semanas.",
-          "Liderazgo del desarrollo del primer modelo ASR en español de la compañía, logrando precisión de grado de producción para clientes existentes."
-        ]
-      },
-      {
-        id: "e2",
-        role: "Investigador Científico Líder",
-        company: "ASAPP Inc",
-        period: "Abr 2020 – May 2022",
-        achievements: [
-          "I+D de clasificadores de sentimientos basados en audio y texto (ver Patente).",
-          "Transición de modelos de capitalización/puntuación basados en FST a modelos neuronales.",
-          "Mejora de la normalización inversa de texto basada en reglas.",
-          "Construcción de pipelines de evaluación estandarizados para asegurar una comparación justa de modelos contra APIs de la competencia.",
-          "Mejora del rendimiento de modelos genéricos mediante la integración de diversas fuentes de datos."
-        ]
+        period: "Abr 2020 – Nov 2025",
+        description: "Desarrollo de sistemas de diálogo conscientes de la voz y modelos de ASR en español para producción. Diseño de marcos de evaluación para APIs de voz en tiempo real y automatización de pipelines de datos. I+D en problemas del mundo del procesamiento del habla."
       },
       {
         id: "e3",
@@ -414,10 +382,7 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         company: "SRI International, STAR Lab",
         location: "Palo Alto, CA",
         period: "Dic 2018 – Mar 2019",
-        achievements: [
-          "Contribución a la construcción de modelos estadísticos para la detección de fin de turno en sistemas de diálogo hablado utilizando RNNs.",
-          "Desarrollo de un framework para introducir predicados de lógica de primer orden en redes neuronales."
-        ]
+        description: "Construcción de modelos estadísticos para la detección de fin de turno en sistemas de diálogo usando RNNs. Desarrollo de un framework para introducir predicados lógicos de primer orden en redes neuronales."
       },
       {
         id: "e5",
@@ -425,21 +390,14 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         company: "SRI International, STAR Lab",
         location: "Palo Alto, CA",
         period: "Sep 2016 – Dic 2016",
-        achievements: [
-          "Contribución a la construcción de un sistema de detección de tos para un Asistente Virtual de Salud mediante la recolección de corpus y desarrollo de modelos de ML.",
-          "Participación en investigación sobre detección de eventos raros utilizando técnicas de modelado de tópicos (LDA) para señales acústicas."
-        ]
+        description: "Desarrollo de modelos de ML para un sistema de detección de tos en un Asistente Virtual de Salud. Investigación sobre la detección de eventos raros usando técnicas de modelado de tópicos."
       },
       {
         id: "e6",
         role: "Desarrollador de Software",
         company: "Manas Technology Solutions",
         period: "Jun 2010 – Nov 2013",
-        achievements: [
-          "Desarrollador end-to-end de aplicaciones web enriquecidas para objetivos sociales y humanitarios.",
-          "Líder de Proyecto para varios proyectos de software en Phnom Penh, Camboya (2013).",
-          "Proyectos destacados incluyen ResourceMap, un sistema para rastrear trabajo y recursos geográficamente."
-        ]
+        description: "Desarrollo full-stack de aplicaciones web con objetivos humanitarios."
       }
     ],
     education: [
@@ -468,11 +426,39 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         id: "uba",
         institution: "Universidad de Buenos Aires",
         department: "Departamento de Computación, Facultad de Ciencias Exactas y Naturales",
+        links: [{ label: "Encuestas estudiantiles (hasta 2022)", url: "https://encuestas-finales.exactas.uba.ar/doc/d8127.html" }],
         roles: [
-          { title: "Profesor", details: "Machine Learning & Deep Learning (8 cuatrimestres), Algoritmos y Estructuras de Datos II (2 cuatrimestres)." },
-          { title: "Jefe de Trabajos Prácticos", details: "Machine Learning, Algoritmos y Estructuras de Datos I, Álgebra I, Paradigmas de Lenguajes de Programación (10 cuatrimestres total)." },
-          { title: "Ayudante de Primera", details: "Álgebra I, Paradigmas de Lenguajes de Programación (6 cuatrimestres)." },
-          { title: "Ayudante de Segunda", details: "Paradigmas de Lenguajes de Programación, Métodos Numéricos, Algoritmos y Estructuras de Datos I (7 cuatrimestres)." }
+          {
+            title: "Profesor (8 cuatrimestres)",
+            courses: [
+              { name: "Machine Learning & Deep Learning", periods: "2025-2C, 2025-1C, 2024-2, 2024-1, 2023-2, 2023-1" },
+              { name: "Algoritmos y Estructuras de Datos II", periods: "2022-2, 2022-1" }
+            ]
+          },
+          {
+            title: "Jefe de Trabajos Prácticos (10 cuatrimestres)",
+            courses: [
+              { name: "Machine Learning", periods: "2018-2" },
+              { name: "Algoritmos y Estructuras de Datos I", periods: "2021-1, 2020-2, 2019-2, 2019-1, 2018-1, 2017-2" },
+              { name: "Álgebra I", periods: "2017-1" },
+              { name: "Paradigmas de Lenguajes de Programación", periods: "2016-1, 2014-2" }
+            ]
+          },
+          {
+            title: "Ayudante de Primera (6 cuatrimestres)",
+            courses: [
+              { name: "Álgebra I", periods: "2015-2, 2015-verano, 2014-2, 2013-2" },
+              { name: "Paradigmas de Lenguajes de Programación", periods: "2015-1, 2014-1" }
+            ]
+          },
+          {
+            title: "Ayudante de Segunda (7 cuatrimestres)",
+            courses: [
+              { name: "Paradigmas de Lenguajes de Programación", periods: "2013-2, 2013-1, 2012-2, 2012-1" },
+              { name: "Métodos Numéricos", periods: "2011-2" },
+              { name: "Algoritmos y Estructuras de Datos I", periods: "2011-2, 2011-1" }
+            ]
+          }
         ]
       },
       {
@@ -480,13 +466,19 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         institution: "Universidad Torcuato Di Tella",
         department: "Master in Management + Analytics, Escuela de Negocios",
         roles: [
-          { title: "Profesor", period: "2022", details: "Introducción al Procesamiento de Datos en R (Curso intensivo)." },
-          { title: "Profesor", period: "2022", details: "Introducción a la Programación en R (Curso intensivo)." },
-          { title: "Profesor", period: "2021", details: "Introducción al Procesamiento de Datos en R (Curso intensivo)." }
+          {
+            title: "Profesor",
+            courses: [
+              { name: "Introducción al Procesamiento de Datos en R", periods: "2021-1 (Intensivo, 8 clases)" },
+              { name: "Introducción a la Programación en R", periods: "2022-1 (Intensivo, 4 clases)" },
+              { name: "Introducción al Procesamiento de Datos en R", periods: "2022-1 (Intensivo, 4 clases)" }
+            ]
+          }
         ]
       }
     ],
     supervision: [
+      { id: "s0", student: "Sofía Roitman", thesis: "Reconocimiento Óptico de Música con Visual LLMs: Análisis Zero-Shot en Partituras Monofónicas", year: "Dic 2025", role: "Director", coAdvisor: "Pablo Riera" },
       { id: "s1", student: "Tomás Ravel", thesis: "Clasificación de toma de turnos en conversaciones humano-humano usando LLMs", year: "Jul 2025", role: "Director" },
       { id: "s2", student: "Sofía Goldberg", thesis: "Aplicación de embeddings BERT para la detección automática de Alzheimer", year: "May 2025", role: "Director", coAdvisor: "Lara Gauder" },
       { id: "s3", student: "Jonathan Scherman", thesis: "Inclusión léxica y sintáctica en modelos de etiquetado offline de transiciones de turno", year: "Ago 2024", role: "Director" },
@@ -501,50 +493,43 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         id: "m1",
         role: "Director de la Carrera de Ciencias de la Computación",
         institution: "Universidad de Buenos Aires",
-        period: "2024 - Presente",
-        description: "Liderazgo en la modernización del plan de estudios y representación del claustro en comisiones de gobierno."
+        period: "2024 - Presente"
       },
       {
         id: "m2",
         role: "Representante de Profesores en la Comisión Curricular",
         institution: "Universidad de Buenos Aires",
-        period: "2021 - Presente",
-        description: "Responsable de la implementación del cambio de plan de estudios para la Licenciatura en Ciencias de la Computación."
+        period: "2021 - Presente"
       },
       {
         id: "m3",
         role: "Representante de Graduados en la Comisión Curricular",
         institution: "Universidad de Buenos Aires",
-        period: "2018 - 2021",
-        description: "Responsable del cambio de plan de estudios para la Licenciatura."
+        period: "2018 - 2021"
       },
       {
         id: "m4",
         role: "Representante de Graduados en el Consejo Departamental",
         institution: "Universidad de Buenos Aires",
-        period: "2018 - 2019",
-        description: "Departamento de Computación, Facultad de Ciencias Exactas y Naturales."
+        period: "2018 - 2019"
       },
       {
         id: "m5",
         role: "Representante en la Comisión de Evaluación",
         institution: "Universidad de Buenos Aires",
-        period: "2017",
-        description: "Responsable de la evaluación del plan de estudios actual de la Licenciatura en Ciencias de la Computación."
+        period: "2017"
       },
       {
         id: "m6",
         role: "Organizador de charlas de divulgación",
         institution: "Universidad de Buenos Aires",
-        period: "2015 - 2018",
-        description: "Charlas para estudiantes de secundaria para fomentar el estudio de carreras relacionadas con CS."
+        period: "2015 - 2018"
       },
       {
         id: "m7",
         role: "Organizador",
         institution: "Universidad de Buenos Aires",
-        period: "2015",
-        description: "Semana de la Computación 2015."
+        period: "2015"
       }
     ],
     conferences: CONFERENCES_DATA,
@@ -553,13 +538,14 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         about: "Sobre mí",
         experience: "Experiencia",
         research: "Investigación",
-        teaching: "Docencia"
+        teaching: "Docencia",
+        management: "Gestión"
       },
       home: {
         location: "Buenos Aires, Argentina",
         highlights: "Destacados Actuales",
-        role_noredink_title: "Científico de Datos Senior",
-        role_noredink_desc: "Full Stack ML & Analytics.",
+        role_noredink_title: "Científico de Datos",
+        role_noredink_desc: "",
         role_uba_title: "Profesor y Director de Carrera",
         role_uba_desc: "Profesor Regular y Director de la Carrera de Ciencias de la Computación",
         links: {
@@ -579,14 +565,16 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         subtitle: "Publicaciones, patentes y datasets seleccionados.",
         journals: "Publicaciones en Revistas",
         conferences: "Publicaciones en Conferencias con Referato",
-        other: "Patentes y Sets de Datos"
+        other: "Patentes y Sets de Datos",
+        participation_title: "Participación en Conferencias"
       },
       teaching: {
-        management_title: "Gestión Académica",
         teaching_title: "Experiencia Docente",
         supervision_title: "Dirección de Tesis (Licenciatura)",
-        conferences_title: "Participación en Conferencias",
         coadvisor_label: "Co-director"
+      },
+      management: {
+        title: "Gestión Académica"
       },
       footer: {
         rights: "Todos los derechos reservados."

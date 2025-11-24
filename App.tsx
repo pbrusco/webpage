@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Menu, X, Linkedin, GraduationCap, MapPin, BookOpen, Users, ExternalLink, Briefcase, ChevronRight, School, Award, UserCheck, Calendar, Globe } from 'lucide-react';
+import { Menu, X, Linkedin, GraduationCap, MapPin, BookOpen, Users, ExternalLink, Briefcase, School, Award, UserCheck, Calendar, Globe } from 'lucide-react';
 import { APP_DATA } from './data';
 import { PublicationItem, Language, SiteData } from './types';
 
@@ -17,6 +17,7 @@ const NavBar: React.FC<{ lang: Language; setLang: (l: Language) => void; data: S
     { name: nav.experience, path: '/experience' },
     { name: nav.research, path: '/research' },
     { name: nav.teaching, path: '/teaching' },
+    { name: nav.management, path: '/management' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -182,7 +183,7 @@ const HomePage: React.FC<{ data: SiteData }> = ({ data }) => {
                   <Briefcase size={20} className="mr-2 text-blue-600"/> {home.role_noredink_title}
                 </h4>
                 <p className="text-sm text-slate-600 mb-2">NoRedInk</p>
-                <p className="text-sm text-slate-500">{home.role_noredink_desc}</p>
+                {home.role_noredink_desc && <p className="text-sm text-slate-500">{home.role_noredink_desc}</p>}
              </div>
              <div className="p-6 bg-slate-50 rounded-lg border border-slate-100 hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-slate-900 mb-2 flex items-center">
@@ -215,14 +216,9 @@ const ExperiencePage: React.FC<{ data: SiteData }> = ({ data }) => {
               </div>
               {exp.location && <span className="text-xs text-slate-400 block mt-1">{exp.location}</span>}
             </div>
-            <ul className="mt-4 space-y-2">
-              {exp.achievements.map((item, idx) => (
-                <li key={idx} className="text-slate-700 text-sm leading-relaxed flex items-start">
-                   <ChevronRight size={16} className="shrink-0 mt-1 mr-2 text-blue-400" />
-                   <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="mt-4 text-slate-700 text-sm leading-relaxed">
+              {exp.description}
+            </p>
           </div>
         ))}
       </div>
@@ -305,6 +301,28 @@ const ResearchPage: React.FC<{ data: SiteData }> = ({ data }) => {
              {other.map(p => <PublicationEntry key={p.id} item={p} />)}
           </div>
         </section>
+
+        {/* Conferences Section (Moved from Teaching) */}
+        <section>
+          <h3 className="text-xl font-bold text-slate-800 mb-6 flex items-center border-b pb-2">
+             <Calendar size={20} className="mr-2" /> {research.participation_title}
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {data.conferences.map((conf) => (
+              <div key={conf.id} className="bg-slate-50 p-4 rounded-lg border border-transparent hover:border-slate-200 transition-colors">
+                <h4 className="font-semibold text-slate-900">{conf.name}</h4>
+                <div className="flex justify-between items-end mt-2">
+                  <span className="text-xs text-slate-500 flex items-center">
+                    <MapPin size={12} className="mr-1" /> {conf.location}
+                  </span>
+                  <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
+                    {conf.date}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );
@@ -315,49 +333,52 @@ const TeachingPage: React.FC<{ data: SiteData }> = ({ data }) => {
   return (
     <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6">
       <div className="grid gap-16">
-        {/* Management Section */}
-        <section>
-          <h2 className="text-2xl font-serif font-bold text-slate-900 mb-6 border-b pb-3 flex items-center">
-            <Briefcase size={24} className="mr-2 text-blue-600" /> {teaching.management_title}
-          </h2>
-          <div className="grid gap-6">
-            {data.management.map((item) => (
-              <div key={item.id} className="flex flex-col md:flex-row md:justify-between md:items-start bg-slate-50 p-5 rounded-lg">
-                <div className="md:w-3/4">
-                  <h3 className="text-lg font-bold text-slate-900">{item.role}</h3>
-                  <p className="text-blue-700 font-medium text-sm">{item.institution}</p>
-                  <p className="text-slate-600 text-sm mt-2 leading-relaxed">{item.description}</p>
-                </div>
-                <div className="mt-2 md:mt-0 md:w-1/4 md:text-right">
-                   <span className="inline-block bg-white px-3 py-1 rounded border border-slate-200 text-xs font-mono font-medium text-slate-500 shadow-sm">
-                     {item.period}
-                   </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
+        
         {/* Teaching Section */}
         <section>
           <h2 className="text-2xl font-serif font-bold text-slate-900 mb-6 border-b pb-3 flex items-center">
              <School size={24} className="mr-2 text-blue-600" /> {teaching.teaching_title}
           </h2>
-          <div className="space-y-8">
+          <div className="space-y-12">
              {data.teaching.map((item) => (
-               <div key={item.id} className="border-l-4 border-blue-100 pl-6">
-                 <h3 className="text-xl font-bold text-slate-900">{item.institution}</h3>
-                 {item.department && <p className="text-slate-500 text-sm mb-4">{item.department}</p>}
+               <div key={item.id}>
+                 <h3 className="text-xl font-bold text-slate-900 border-l-4 border-blue-600 pl-3 mb-1">{item.institution}</h3>
+                 {item.department && <p className="text-slate-500 text-sm mb-6 pl-4">{item.department}</p>}
                  
-                 <ul className="space-y-3">
+                 <div className="space-y-8 pl-4">
                    {item.roles.map((role, idx) => (
-                     <li key={idx} className="text-slate-700">
-                       <span className="font-semibold text-slate-900 block md:inline md:mr-2">{role.title}</span>
-                       {role.period && <span className="text-xs bg-slate-100 px-2 py-0.5 rounded text-slate-500 mr-2 align-middle">{role.period}</span>}
-                       <span className="text-sm text-slate-600 block md:inline">{role.details}</span>
-                     </li>
+                     <div key={idx} className="relative border-l-2 border-slate-100 pl-6 pb-2">
+                       <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-slate-300"></div>
+                       <h4 className="font-bold text-slate-800 text-md mb-3">{role.title}</h4>
+                       <div className="space-y-3">
+                         {role.courses.map((course, cIdx) => (
+                           <div key={cIdx} className="bg-slate-50 p-3 rounded border border-slate-100">
+                             <span className="font-semibold text-slate-900 block">{course.name}</span>
+                             <span className="text-xs font-mono text-blue-600 mt-1 block">{course.periods}</span>
+                             {course.details && <span className="text-xs text-slate-500 mt-1 block">{course.details}</span>}
+                           </div>
+                         ))}
+                       </div>
+                     </div>
                    ))}
-                 </ul>
+                 </div>
+                 
+                 {item.links && item.links.length > 0 && (
+                   <div className="mt-4 pl-4">
+                     {item.links.map((link, lIdx) => (
+                       <a 
+                        key={lIdx} 
+                        href={link.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 hover:underline"
+                       >
+                         <ExternalLink size={14} className="mr-1" />
+                         {link.label}
+                       </a>
+                     ))}
+                   </div>
+                 )}
                </div>
              ))}
           </div>
@@ -386,29 +407,31 @@ const TeachingPage: React.FC<{ data: SiteData }> = ({ data }) => {
             ))}
           </div>
         </section>
+      </div>
+    </div>
+  );
+};
 
-        {/* Conferences Section */}
-        <section>
+const ManagementPage: React.FC<{ data: SiteData }> = ({ data }) => {
+  const { management } = data.labels;
+  return (
+    <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6">
+      <section>
           <h2 className="text-2xl font-serif font-bold text-slate-900 mb-6 border-b pb-3 flex items-center">
-             <Calendar size={24} className="mr-2 text-blue-600" /> {teaching.conferences_title}
+            <Briefcase size={24} className="mr-2 text-blue-600" /> {management.title}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {data.conferences.map((conf) => (
-              <div key={conf.id} className="bg-slate-50 p-4 rounded-lg border border-transparent hover:border-slate-200 transition-colors">
-                <h4 className="font-semibold text-slate-900">{conf.name}</h4>
-                <div className="flex justify-between items-end mt-2">
-                  <span className="text-xs text-slate-500 flex items-center">
-                    <MapPin size={12} className="mr-1" /> {conf.location}
-                  </span>
-                  <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
-                    {conf.date}
-                  </span>
+          <div className="space-y-6">
+            {data.management.map((item) => (
+              <div key={item.id} className="border-l-4 border-slate-200 pl-4 py-1 hover:border-blue-400 transition-colors">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-baseline">
+                  <h3 className="text-lg font-bold text-slate-900">{item.role}</h3>
+                  <span className="text-sm font-mono text-slate-500 mt-1 md:mt-0">{item.period}</span>
                 </div>
+                <p className="text-blue-700 text-sm mt-1">{item.institution}</p>
               </div>
             ))}
           </div>
         </section>
-      </div>
     </div>
   );
 };
@@ -429,6 +452,7 @@ export default function App() {
             <Route path="/experience" element={<ExperiencePage data={data} />} />
             <Route path="/research" element={<ResearchPage data={data} />} />
             <Route path="/teaching" element={<TeachingPage data={data} />} />
+            <Route path="/management" element={<ManagementPage data={data} />} />
           </Routes>
         </main>
         <Footer text={data.labels.footer.rights} name={data.profile.name} />

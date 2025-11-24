@@ -7,8 +7,7 @@ export interface ExperienceItem {
   company: string;
   location?: string;
   period: string;
-  description?: string;
-  achievements: string[];
+  description: string;
 }
 
 export interface EducationItem {
@@ -32,15 +31,23 @@ export interface PublicationItem {
   type: 'journal' | 'conference' | 'patent' | 'dataset';
 }
 
+export interface TeachingCourse {
+  name: string;
+  periods: string;
+  details?: string;
+}
+
+export interface TeachingRole {
+  title: string;
+  courses: TeachingCourse[];
+}
+
 export interface TeachingItem {
   id: string;
   institution: string;
   department?: string;
-  roles: {
-    title: string;
-    period?: string;
-    details?: string;
-  }[];
+  roles: TeachingRole[];
+  links?: { label: string; url: string }[];
 }
 
 export interface ManagementItem {
@@ -48,7 +55,6 @@ export interface ManagementItem {
   role: string;
   institution: string;
   period: string;
-  description: string;
 }
 
 export interface SupervisionItem {
@@ -73,6 +79,7 @@ export interface UILabels {
     experience: string;
     research: string;
     teaching: string;
+    management: string;
   };
   home: {
     location: string;
@@ -99,13 +106,15 @@ export interface UILabels {
     journals: string;
     conferences: string;
     other: string;
+    participation_title: string;
   };
   teaching: {
-    management_title: string;
     teaching_title: string;
     supervision_title: string;
-    conferences_title: string;
     coadvisor_label: string;
+  };
+  management: {
+    title: string;
   };
   footer: {
     rights: string;
@@ -139,4 +148,5 @@ export enum PageRoute {
   EXPERIENCE = '/experience',
   RESEARCH = '/research',
   TEACHING = '/teaching',
+  MANAGEMENT = '/management',
 }

@@ -335,6 +335,8 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
       research: {
         title: "Research",
         subtitle: "Selected publications, patents, and datasets.",
+        full_list_prefix: "For a full list of publications, visit",
+        full_list_link: "Google Scholar",
         journals: "Journal Publications",
         conferences: "Peer-reviewed Conference Publications",
         other: "Patents & Datasets",
@@ -563,6 +565,8 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
       research: {
         title: "Investigación",
         subtitle: "Publicaciones, patentes y datasets seleccionados.",
+        full_list_prefix: "Para ver la lista completa de publicaciones, visitá",
+        full_list_link: "Google Scholar",
         journals: "Publicaciones en Revistas",
         conferences: "Publicaciones en Conferencias con Referato",
         other: "Patentes y Sets de Datos",

@@ -272,7 +272,13 @@ const ResearchPage: React.FC<{ data: SiteData }> = ({ data }) => {
   return (
     <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6">
       <h2 className="text-3xl font-serif font-bold text-slate-900 mb-2">{research.title}</h2>
-      <p className="text-slate-600 mb-10">{research.subtitle}</p>
+      <p className="text-slate-600 mb-2">{research.subtitle}</p>
+      <p className="text-slate-500 text-sm mb-10">
+        {research.full_list_prefix}{' '}
+        <a href="https://scholar.google.com/citations?user=OucNeLgAAAAJ&hl=es&oi=ao" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+          {research.full_list_link}
+        </a>.
+      </p>
 
       <div className="space-y-12">
         <section>

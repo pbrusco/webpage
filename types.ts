@@ -103,6 +103,8 @@ export interface UILabels {
   research: {
     title: string;
     subtitle: string;
+    full_list_prefix: string;
+    full_list_link: string;
     journals: string;
     conferences: string;
     other: string;

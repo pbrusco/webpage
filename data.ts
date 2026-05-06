@@ -11,12 +11,20 @@ const SHARED_LINKS = {
 
 const PUBLICATIONS_DATA = [
   {
+    id: "j1",
+    type: "journal",
+    title: "Speech-induced suppression during natural dialogues",
+    authors: "Joaquín E. González, Nicolás Nieto, Pablo Brusco, Agustín Gravano, and Juan E. Kamienkowski",
+    venue: "Communications Biology",
+    year: "2024"
+  },
+  {
     id: "j2",
     type: "journal",
     title: "Automatic offline annotation of turn-taking transitions in task-oriented dialogue",
     authors: "Pablo Brusco and Agustín Gravano",
     venue: "Computer Speech & Language",
-    year: "2022"
+    year: "2023"
   },
   {
     id: "j3",

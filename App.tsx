@@ -251,10 +251,19 @@ const ExperiencePage: React.FC<{ data: SiteData }> = ({ data }) => {
   );
 };
 
+const renderAuthors = (authors: string) => {
+  const parts = authors.split(/(Pablo Brusco)/g);
+  return parts.map((part, i) =>
+    part === 'Pablo Brusco'
+      ? <strong key={i} className="font-semibold text-slate-900">{part}</strong>
+      : <React.Fragment key={i}>{part}</React.Fragment>
+  );
+};
+
 const PublicationEntry: React.FC<{ item: PublicationItem }> = ({ item }) => (
   <div className="mb-6">
     <h4 className="text-md font-semibold text-slate-900">{item.title}</h4>
-    <p className="text-slate-600 text-sm mt-1">{item.authors}</p>
+    <p className="text-slate-600 text-sm mt-1">{renderAuthors(item.authors)}</p>
     <div className="flex items-center mt-2 text-xs font-mono text-blue-600">
       <span className="bg-blue-50 px-2 py-0.5 rounded border border-blue-100 uppercase tracking-wide">
         {item.venue}

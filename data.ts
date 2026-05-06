@@ -294,9 +294,9 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
       }
     ],
     supervision: [
-      { id: "sip1", student: "Martina Noel Alvarez Motta", thesis: "Modeling turn-taking labeling in conversations using internal representations of Full Duplex speech models", year: "in progress", role: "Advisor" },
-      { id: "sip2", student: "Florencia Fontana Walser", thesis: "Automatic classification of turn transitions in human-human conversations with AudioLMs", year: "in progress", role: "Advisor" },
-      { id: "sip3", student: "Pablo Laciana", thesis: "Tokenizations for symbolic music generation models: rock/pop accompaniments", year: "in progress", role: "Advisor" },
+      { id: "sip1", student: "Martina Noel Alvarez Motta", thesis: "Modeling turn-taking labeling in conversations using internal representations of Full Duplex speech models", year: "in progress", role: "Advisor", coAdvisor: "Pablo Riera" },
+      { id: "sip2", student: "Florencia Fontana Walser", thesis: "Automatic classification of turn transitions in human-human conversations with AudioLMs", year: "in progress", role: "Advisor", coAdvisor: "Pablo Riera" },
+      { id: "sip3", student: "Pablo Laciana", thesis: "Tokenizations for symbolic music generation models: rock/pop accompaniments", year: "in progress", role: "Advisor", coAdvisor: "Leonardo Pepino" },
       { id: "s0", student: "Sofía Roitman", thesis: "Optical Music Recognition with Visual LLMs: Zero-Shot Analysis on Monophonic Scores", year: "Dec 2025", role: "Advisor", coAdvisor: "Pablo Riera" },
       { id: "s1", student: "Tomás Ravel", thesis: "Turn-taking classification in human-human conversations using LLMs", year: "Jul 2025", role: "Advisor" },
       { id: "s2", student: "Sofía Goldberg", thesis: "Application of BERT embeddings for automatic Alzheimer's detection", year: "May 2025", role: "Advisor", coAdvisor: "Lara Gauder" },
@@ -484,9 +484,9 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
       }
     ],
     supervision: [
-      { id: "sip1", student: "Martina Noel Alvarez Motta", thesis: "Modelado de etiquetado de turnos en conversaciones utilizando representaciones internas de modelos de habla Full Duplex", year: "en curso", role: "Director" },
-      { id: "sip2", student: "Florencia Fontana Walser", thesis: "Clasificación automática de transiciones de turno en conversaciones humano-humano con AudioLMs", year: "en curso", role: "Director" },
-      { id: "sip3", student: "Pablo Laciana", thesis: "Tokenizaciones para modelos de generación de música simbólica: acompañamientos de rock/pop", year: "en curso", role: "Director" },
+      { id: "sip1", student: "Martina Noel Alvarez Motta", thesis: "Modelado de etiquetado de turnos en conversaciones utilizando representaciones internas de modelos de habla Full Duplex", year: "en curso", role: "Director", coAdvisor: "Pablo Riera" },
+      { id: "sip2", student: "Florencia Fontana Walser", thesis: "Clasificación automática de transiciones de turno en conversaciones humano-humano con AudioLMs", year: "en curso", role: "Director", coAdvisor: "Pablo Riera" },
+      { id: "sip3", student: "Pablo Laciana", thesis: "Tokenizaciones para modelos de generación de música simbólica: acompañamientos de rock/pop", year: "en curso", role: "Director", coAdvisor: "Leonardo Pepino" },
       { id: "s0", student: "Sofía Roitman", thesis: "Reconocimiento Óptico de Música con Visual LLMs: Análisis Zero-Shot en Partituras Monofónicas", year: "Dic 2025", role: "Director", coAdvisor: "Pablo Riera" },
       { id: "s1", student: "Tomás Ravel", thesis: "Clasificación de toma de turnos en conversaciones humano-humano usando LLMs", year: "Jul 2025", role: "Director" },
       { id: "s2", student: "Sofía Goldberg", thesis: "Aplicación de embeddings BERT para la detección automática de Alzheimer", year: "May 2025", role: "Director", coAdvisor: "Lara Gauder" },

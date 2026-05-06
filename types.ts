@@ -79,6 +79,7 @@ export interface UILabels {
     experience: string;
     research: string;
     teaching: string;
+    students: string;
     management: string;
   };
   home: {
@@ -150,5 +151,6 @@ export enum PageRoute {
   EXPERIENCE = '/experience',
   RESEARCH = '/research',
   TEACHING = '/teaching',
+  STUDENTS = '/students',
   MANAGEMENT = '/management',
 }

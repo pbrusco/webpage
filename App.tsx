@@ -17,6 +17,7 @@ const NavBar: React.FC<{ lang: Language; setLang: (l: Language) => void; data: S
     { name: nav.experience, path: '/experience' },
     { name: nav.research, path: '/research' },
     { name: nav.teaching, path: '/teaching' },
+    { name: nav.students, path: '/students' },
     { name: nav.management, path: '/management' },
   ];
 
@@ -338,82 +339,84 @@ const TeachingPage: React.FC<{ data: SiteData }> = ({ data }) => {
   const { teaching } = data.labels;
   return (
     <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6">
-      <div className="grid gap-16">
-        
-        {/* Teaching Section */}
-        <section>
-          <h2 className="text-2xl font-serif font-bold text-slate-900 mb-6 border-b pb-3 flex items-center">
-             <School size={24} className="mr-2 text-blue-600" /> {teaching.teaching_title}
-          </h2>
-          <div className="space-y-12">
-             {data.teaching.map((item) => (
-               <div key={item.id}>
-                 <h3 className="text-xl font-bold text-slate-900 border-l-4 border-blue-600 pl-3 mb-1">{item.institution}</h3>
-                 {item.department && <p className="text-slate-500 text-sm mb-6 pl-4">{item.department}</p>}
-                 
-                 <div className="space-y-8 pl-4">
-                   {item.roles.map((role, idx) => (
-                     <div key={idx} className="relative border-l-2 border-slate-100 pl-6 pb-2">
-                       <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-slate-300"></div>
-                       <h4 className="font-bold text-slate-800 text-md mb-3">{role.title}</h4>
-                       <div className="space-y-3">
-                         {role.courses.map((course, cIdx) => (
-                           <div key={cIdx} className="bg-slate-50 p-3 rounded border border-slate-100">
-                             <span className="font-semibold text-slate-900 block">{course.name}</span>
-                             <span className="text-xs font-mono text-blue-600 mt-1 block">{course.periods}</span>
-                             {course.details && <span className="text-xs text-slate-500 mt-1 block">{course.details}</span>}
-                           </div>
-                         ))}
-                       </div>
+      <section>
+        <h2 className="text-2xl font-serif font-bold text-slate-900 mb-6 border-b pb-3 flex items-center">
+           <School size={24} className="mr-2 text-blue-600" /> {teaching.teaching_title}
+        </h2>
+        <div className="space-y-12">
+           {data.teaching.map((item) => (
+             <div key={item.id}>
+               <h3 className="text-xl font-bold text-slate-900 border-l-4 border-blue-600 pl-3 mb-1">{item.institution}</h3>
+               {item.department && <p className="text-slate-500 text-sm mb-6 pl-4">{item.department}</p>}
+
+               <div className="space-y-8 pl-4">
+                 {item.roles.map((role, idx) => (
+                   <div key={idx} className="relative border-l-2 border-slate-100 pl-6 pb-2">
+                     <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-slate-300"></div>
+                     <h4 className="font-bold text-slate-800 text-md mb-3">{role.title}</h4>
+                     <div className="space-y-3">
+                       {role.courses.map((course, cIdx) => (
+                         <div key={cIdx} className="bg-slate-50 p-3 rounded border border-slate-100">
+                           <span className="font-semibold text-slate-900 block">{course.name}</span>
+                           <span className="text-xs font-mono text-blue-600 mt-1 block">{course.periods}</span>
+                           {course.details && <span className="text-xs text-slate-500 mt-1 block">{course.details}</span>}
+                         </div>
+                       ))}
                      </div>
+                   </div>
+                 ))}
+               </div>
+
+               {item.links && item.links.length > 0 && (
+                 <div className="mt-4 pl-4">
+                   {item.links.map((link, lIdx) => (
+                     <a
+                      key={lIdx}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 hover:underline"
+                     >
+                       <ExternalLink size={14} className="mr-1" />
+                       {link.label}
+                     </a>
                    ))}
                  </div>
-                 
-                 {item.links && item.links.length > 0 && (
-                   <div className="mt-4 pl-4">
-                     {item.links.map((link, lIdx) => (
-                       <a 
-                        key={lIdx} 
-                        href={link.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 hover:underline"
-                       >
-                         <ExternalLink size={14} className="mr-1" />
-                         {link.label}
-                       </a>
-                     ))}
-                   </div>
-                 )}
-               </div>
-             ))}
-          </div>
-        </section>
+               )}
+             </div>
+           ))}
+        </div>
+      </section>
+    </div>
+  );
+};
 
-        {/* Mentorship Section */}
-        <section>
-          <h2 className="text-2xl font-serif font-bold text-slate-900 mb-6 border-b pb-3 flex items-center">
-             <UserCheck size={24} className="mr-2 text-blue-600" /> {teaching.supervision_title}
-          </h2>
-          <div className="overflow-hidden bg-white border border-slate-200 rounded-lg">
-            {data.supervision.map((student, idx) => (
-              <div key={student.id} className={`p-4 ${idx !== data.supervision.length - 1 ? 'border-b border-slate-100' : ''} hover:bg-slate-50 transition-colors`}>
-                <div className="flex flex-col md:flex-row justify-between md:items-center">
-                   <div className="md:flex-1">
-                     <h4 className="font-bold text-slate-900">{student.student}</h4>
-                     <p className="text-slate-600 text-sm mt-1 italic">"{student.thesis}"</p>
-                     {student.coAdvisor && <p className="text-xs text-slate-400 mt-1">{teaching.coadvisor_label}: {student.coAdvisor}</p>}
-                   </div>
-                   <div className="mt-2 md:mt-0 flex items-center md:flex-col md:items-end gap-2">
-                      <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">{student.role}</span>
-                      <span className="text-xs text-slate-500 font-mono">{student.year}</span>
-                   </div>
-                </div>
+const StudentsPage: React.FC<{ data: SiteData }> = ({ data }) => {
+  const { teaching } = data.labels;
+  return (
+    <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6">
+      <section>
+        <h2 className="text-2xl font-serif font-bold text-slate-900 mb-6 border-b pb-3 flex items-center">
+           <UserCheck size={24} className="mr-2 text-blue-600" /> {teaching.supervision_title}
+        </h2>
+        <div className="overflow-hidden bg-white border border-slate-200 rounded-lg">
+          {data.supervision.map((student, idx) => (
+            <div key={student.id} className={`p-4 ${idx !== data.supervision.length - 1 ? 'border-b border-slate-100' : ''} hover:bg-slate-50 transition-colors`}>
+              <div className="flex flex-col md:flex-row justify-between md:items-center">
+                 <div className="md:flex-1">
+                   <h4 className="font-bold text-slate-900">{student.student}</h4>
+                   <p className="text-slate-600 text-sm mt-1 italic">"{student.thesis}"</p>
+                   {student.coAdvisor && <p className="text-xs text-slate-400 mt-1">{teaching.coadvisor_label}: {student.coAdvisor}</p>}
+                 </div>
+                 <div className="mt-2 md:mt-0 flex items-center md:flex-col md:items-end gap-2">
+                    <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">{student.role}</span>
+                    <span className="text-xs text-slate-500 font-mono">{student.year}</span>
+                 </div>
               </div>
-            ))}
-          </div>
-        </section>
-      </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };
@@ -458,6 +461,7 @@ export default function App() {
             <Route path="/experience" element={<ExperiencePage data={data} />} />
             <Route path="/research" element={<ResearchPage data={data} />} />
             <Route path="/teaching" element={<TeachingPage data={data} />} />
+            <Route path="/students" element={<StudentsPage data={data} />} />
             <Route path="/management" element={<ManagementPage data={data} />} />
           </Routes>
         </main>

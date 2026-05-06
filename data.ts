@@ -139,7 +139,7 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         role: "Data Scientist",
         company: "NoRedInk",
         period: "Dec 2025 – Current",
-        description: "Focus on Full Stack Machine Learning and Analytics."
+        description: "NoRedInk is a writing and grammar platform used in 60% of US school districts to help Grades 3–12 students become stronger writers, with an AI-powered Grading Assistant that cuts teacher grading time by up to 40%. As a Data Scientist on the Machine Learning team, I focus on synthetic data simulation, AI evaluation protocols, and automation around LLMs."
       },
       {
         id: "e1",
@@ -294,6 +294,8 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
       }
     ],
     supervision: [
+      { id: "sip1", student: "Martina Noel Alvarez Motta", thesis: "Modeling turn-taking labeling in conversations using internal representations of Full Duplex speech models", year: "in progress", role: "Advisor" },
+      { id: "sip2", student: "Florencia Fontana Walser", thesis: "Automatic classification of turn transitions in human-human conversations with AudioLMs", year: "in progress", role: "Advisor" },
       { id: "s0", student: "Sofía Roitman", thesis: "Optical Music Recognition with Visual LLMs: Zero-Shot Analysis on Monophonic Scores", year: "Dec 2025", role: "Advisor", coAdvisor: "Pablo Riera" },
       { id: "s1", student: "Tomás Ravel", thesis: "Turn-taking classification in human-human conversations using LLMs", year: "Jul 2025", role: "Advisor" },
       { id: "s2", student: "Sofía Goldberg", thesis: "Application of BERT embeddings for automatic Alzheimer's detection", year: "May 2025", role: "Advisor", coAdvisor: "Lara Gauder" },
@@ -311,13 +313,14 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         experience: "Experience",
         research: "Research",
         teaching: "Teaching",
+        students: "Students",
         management: "Management"
       },
       home: {
         location: "Buenos Aires, Argentina",
         highlights: "Current Highlights",
         role_noredink_title: "Data Scientist",
-        role_noredink_desc: "",
+        role_noredink_desc: "Working on synthetic data simulation, AI evaluation protocols, and automation around LLMs for a writing platform used in 60% of US school districts.",
         role_uba_title: "Director & Professor",
         role_uba_desc: "Director of the Computer Science Degree Program and Tenure Professor for Machine Learning & Deep Learning.",
         links: {
@@ -369,7 +372,7 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         role: "Científico de Datos",
         company: "NoRedInk",
         period: "Dic 2025 – Actualidad",
-        description: "Rol enfocado en Machine Learning Full Stack y Analytics."
+        description: "NoRedInk es una plataforma de escritura y gramática usada en el 60% de los distritos escolares de EE.UU. para ayudar a estudiantes de los grados 3 a 12 a convertirse en mejores escritores, con un asistente de corrección impulsado por IA que reduce el tiempo de corrección docente hasta en un 40%. Como Científico de Datos en el equipo de Machine Learning, trabajo en simulación de datos sintéticos, protocolos de evaluación de IA y automatización alrededor de LLMs."
       },
       {
         id: "e1",
@@ -480,6 +483,8 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
       }
     ],
     supervision: [
+      { id: "sip1", student: "Martina Noel Alvarez Motta", thesis: "Modelado de etiquetado de turnos en conversaciones utilizando representaciones internas de modelos de habla Full Duplex", year: "en curso", role: "Director" },
+      { id: "sip2", student: "Florencia Fontana Walser", thesis: "Clasificación automática de transiciones de turno en conversaciones humano-humano con AudioLMs", year: "en curso", role: "Director" },
       { id: "s0", student: "Sofía Roitman", thesis: "Reconocimiento Óptico de Música con Visual LLMs: Análisis Zero-Shot en Partituras Monofónicas", year: "Dic 2025", role: "Director", coAdvisor: "Pablo Riera" },
       { id: "s1", student: "Tomás Ravel", thesis: "Clasificación de toma de turnos en conversaciones humano-humano usando LLMs", year: "Jul 2025", role: "Director" },
       { id: "s2", student: "Sofía Goldberg", thesis: "Aplicación de embeddings BERT para la detección automática de Alzheimer", year: "May 2025", role: "Director", coAdvisor: "Lara Gauder" },
@@ -541,13 +546,14 @@ export const APP_DATA: { en: SiteData; es: SiteData } = {
         experience: "Experiencia",
         research: "Investigación",
         teaching: "Docencia",
+        students: "Estudiantes",
         management: "Gestión"
       },
       home: {
         location: "Buenos Aires, Argentina",
         highlights: "Destacados Actuales",
         role_noredink_title: "Científico de Datos",
-        role_noredink_desc: "",
+        role_noredink_desc: "Trabajo en simulación de datos sintéticos, protocolos de evaluación de IA y automatización alrededor de LLMs para una plataforma de escritura usada en el 60% de los distritos escolares de EE.UU.",
         role_uba_title: "Profesor y Director de Carrera",
         role_uba_desc: "Profesor Regular y Director de la Carrera de Ciencias de la Computación",
         links: {
